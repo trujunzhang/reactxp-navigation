@@ -12,38 +12,38 @@ var CardStackTransitioner = require('../views/CardStackTransitioner');
 var React = require('reactxp');
 
 var StackNavigator = function StackNavigator(routeConfigMap) {
-  var stackConfig = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  var initialRouteName = stackConfig.initialRouteName,
-      initialRouteParams = stackConfig.initialRouteParams,
-      paths = stackConfig.paths,
-      headerMode = stackConfig.headerMode,
-      mode = stackConfig.mode,
-      cardStyle = stackConfig.cardStyle,
-      transitionConfig = stackConfig.transitionConfig,
-      onTransitionStart = stackConfig.onTransitionStart,
-      onTransitionEnd = stackConfig.onTransitionEnd,
-      navigationOptions = stackConfig.navigationOptions;
+    var stackConfig = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var initialRouteName = stackConfig.initialRouteName,
+        initialRouteParams = stackConfig.initialRouteParams,
+        paths = stackConfig.paths,
+        headerMode = stackConfig.headerMode,
+        mode = stackConfig.mode,
+        cardStyle = stackConfig.cardStyle,
+        transitionConfig = stackConfig.transitionConfig,
+        onTransitionStart = stackConfig.onTransitionStart,
+        onTransitionEnd = stackConfig.onTransitionEnd,
+        navigationOptions = stackConfig.navigationOptions;
 
-  var stackRouterConfig = {
-    initialRouteName: initialRouteName,
-    initialRouteParams: initialRouteParams,
-    paths: paths,
-    navigationOptions: navigationOptions
-  };
-  var router = StackRouter(routeConfigMap, stackRouterConfig);
-  var navigator = createNavigator(router, routeConfigMap, stackConfig)(function (props) {
+    var stackRouterConfig = {
+        initialRouteName: initialRouteName,
+        initialRouteParams: initialRouteParams,
+        paths: paths,
+        navigationOptions: navigationOptions
+    };
+    var router = StackRouter(routeConfigMap, stackRouterConfig);
+    var navigator = createNavigator(router, routeConfigMap, stackConfig)(function (props) {
 
-    return React.createElement(CardStackTransitioner, _extends({}, props, {
-      headerMode: headerMode,
-      mode: mode,
-      cardStyle: cardStyle,
-      transitionConfig: transitionConfig,
-      onTransitionStart: onTransitionStart,
-      onTransitionEnd: onTransitionEnd
-    }));
-  });
+        return React.createElement(CardStackTransitioner, _extends({}, props, {
+            headerMode: headerMode,
+            mode: mode,
+            cardStyle: cardStyle,
+            transitionConfig: transitionConfig,
+            onTransitionStart: onTransitionStart,
+            onTransitionEnd: onTransitionEnd
+        }));
+    });
 
-  return createNavigationContainer(navigator, stackConfig.containerOptions);
+    return createNavigationContainer(navigator, stackConfig.containerOptions);
 };
 
 exports.StackNavigator = StackNavigator;

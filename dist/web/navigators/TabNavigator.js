@@ -17,48 +17,48 @@ var TabBarTop = require('../views/TabView/TabBarTop');
 var TabBarBottom = require('../views/TabView/TabBarBottom');
 
 var TabNavigator = function TabNavigator(routeConfigs, config) {
-  // Use the look native to the platform by default
-  var mergedConfig = _extends({}, TabNavigator.Presets.Default, config);
+    // Use the look native to the platform by default
+    var mergedConfig = _extends({}, TabNavigator.Presets.Default, config);
 
-  var tabBarComponent = mergedConfig.tabBarComponent,
-      tabBarPosition = mergedConfig.tabBarPosition,
-      tabBarOptions = mergedConfig.tabBarOptions,
-      swipeEnabled = mergedConfig.swipeEnabled,
-      animationEnabled = mergedConfig.animationEnabled,
-      lazy = mergedConfig.lazy,
-      tabsConfig = _objectWithoutProperties(mergedConfig, ['tabBarComponent', 'tabBarPosition', 'tabBarOptions', 'swipeEnabled', 'animationEnabled', 'lazy']);
+    var tabBarComponent = mergedConfig.tabBarComponent,
+        tabBarPosition = mergedConfig.tabBarPosition,
+        tabBarOptions = mergedConfig.tabBarOptions,
+        swipeEnabled = mergedConfig.swipeEnabled,
+        animationEnabled = mergedConfig.animationEnabled,
+        lazy = mergedConfig.lazy,
+        tabsConfig = _objectWithoutProperties(mergedConfig, ['tabBarComponent', 'tabBarPosition', 'tabBarOptions', 'swipeEnabled', 'animationEnabled', 'lazy']);
 
-  var router = TabRouter(routeConfigs, tabsConfig);
+    var router = TabRouter(routeConfigs, tabsConfig);
 
-  var navigator = createNavigator(router, routeConfigs, config)(function (props) {
-    return React.createElement(TabView, _extends({}, props, {
-      tabBarComponent: tabBarComponent,
-      tabBarPosition: tabBarPosition,
-      tabBarOptions: tabBarOptions,
-      swipeEnabled: swipeEnabled,
-      animationEnabled: animationEnabled,
-      lazy: lazy
-    }));
-  });
+    var navigator = createNavigator(router, routeConfigs, config)(function (props) {
+        return React.createElement(TabView, _extends({}, props, {
+            tabBarComponent: tabBarComponent,
+            tabBarPosition: tabBarPosition,
+            tabBarOptions: tabBarOptions,
+            swipeEnabled: swipeEnabled,
+            animationEnabled: animationEnabled,
+            lazy: lazy
+        }));
+    });
 
-  return createNavigationContainer(navigator, tabsConfig.containerOptions);
+    return createNavigationContainer(navigator, tabsConfig.containerOptions);
 };
 
 var Presets = {
-  iOSBottomTabs: {
-    tabBarComponent: TabBarBottom,
-    tabBarPosition: 'bottom',
-    swipeEnabled: false,
-    animationEnabled: true,
-    lazy: false
-  },
-  AndroidTopTabs: {
-    tabBarComponent: TabBarTop,
-    tabBarPosition: 'top',
-    swipeEnabled: true,
-    animationEnabled: true,
-    lazy: false
-  }
+    iOSBottomTabs: {
+        tabBarComponent: TabBarBottom,
+        tabBarPosition: 'bottom',
+        swipeEnabled: false,
+        animationEnabled: true,
+        lazy: false
+    },
+    AndroidTopTabs: {
+        tabBarComponent: TabBarTop,
+        tabBarPosition: 'top',
+        swipeEnabled: true,
+        animationEnabled: true,
+        lazy: false
+    }
 };
 
 /**
@@ -80,9 +80,9 @@ var Presets = {
  *```
  */
 TabNavigator.Presets = {
-  iOSBottomTabs: Presets.iOSBottomTabs,
-  AndroidTopTabs: Presets.AndroidTopTabs,
-  Default: Presets.iOSBottomTabs
+    iOSBottomTabs: Presets.iOSBottomTabs,
+    AndroidTopTabs: Presets.AndroidTopTabs,
+    Default: Presets.iOSBottomTabs
 };
 
 exports.TabNavigator = TabNavigator;

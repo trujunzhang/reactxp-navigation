@@ -176,7 +176,8 @@ var styles = {
     flexDirection: 'row',
     borderTopWidth: StyleSheet.hairlineWidth,
     borderTopColor: 'rgba(0, 0, 0, .2)',
-    backgroundColor: '#f4f4f4' }),
+    backgroundColor: '#f4f4f4' // Default background color in iOS 10
+  }),
   tab: Styles.createViewStyle({
     flex: 1,
     alignItems: 'stretch',

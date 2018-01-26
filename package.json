@@ -12,9 +12,9 @@
     "reactxp-animation": "https://github.com/LeJPR/reactxp-animation.git"
   },
   "peerDependencies": {
-    "react-dom": "^15.3.1",
-    "react-native": "^0.34.0",
-    "reactxp": "^0.34.0"
+    "react-dom": "^16.2.0",
+    "react-native": "^0.52.1",
+    "reactxp": "^0.51.2"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

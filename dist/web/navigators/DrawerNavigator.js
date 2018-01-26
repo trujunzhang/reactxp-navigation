@@ -17,52 +17,56 @@ var DrawerView = require('../views/Drawer/DrawerView');
 var DrawerItems = require('../views/Drawer/DrawerNavigatorItems');
 
 var DefaultDrawerConfig = {
-  /*
-   * Default drawer width is screen width - header width
-   * https://material.io/guidelines/patterns/navigation-drawer.html
-   */
-  drawerWidth: UserInterface.measureWindow().width - 64,
-  contentComponent: DrawerItems,
-  drawerPosition: 'left'
+    /*
+     * Default drawer width is screen width - header width
+     * https://material.io/guidelines/patterns/navigation-drawer.html
+     */
+    drawerWidth: UserInterface.measureWindow().width - 64,
+    contentComponent: DrawerItems,
+    drawerPosition: 'left'
 };
 
 var DrawerNavigator = function DrawerNavigator(routeConfigs, config) {
-  var mergedConfig = _extends({}, DefaultDrawerConfig, config);
+    var mergedConfig = _extends({}, DefaultDrawerConfig, config);
 
-  var containerConfig = mergedConfig.containerConfig,
-      drawerWidth = mergedConfig.drawerWidth,
-      contentComponent = mergedConfig.contentComponent,
-      contentOptions = mergedConfig.contentOptions,
-      drawerPosition = mergedConfig.drawerPosition,
-      tabsConfig = _objectWithoutProperties(mergedConfig, ['containerConfig', 'drawerWidth', 'contentComponent', 'contentOptions', 'drawerPosition']);
+    var containerConfig = mergedConfig.containerConfig,
+        drawerWidth = mergedConfig.drawerWidth,
+        contentComponent = mergedConfig.contentComponent,
+        contentOptions = mergedConfig.contentOptions,
+        drawerPosition = mergedConfig.drawerPosition,
+        tabsConfig = _objectWithoutProperties(mergedConfig, ['containerConfig', 'drawerWidth', 'contentComponent', 'contentOptions', 'drawerPosition']);
 
-  var contentRouter = TabRouter(routeConfigs, tabsConfig);
+    var contentRouter = TabRouter(routeConfigs, tabsConfig);
 
-  var drawerRouter = TabRouter({
-    DrawerClose: {
-      screen: createNavigator(contentRouter, routeConfigs, config)(function (props) {
-        return React.createElement(DrawerScreen, props);
-      })
-    },
-    DrawerOpen: {
-      screen: function screen() {
-        return null;
-      }
-    }
-  }, {
-    initialRouteName: 'DrawerClose'
-  });
+    var drawerRouter = TabRouter({
+        DrawerClose: {
+            screen: createNavigator(contentRouter, routeConfigs, config
+            /* NavigatorTypes.DRAWER,*/
+            )(function (props) {
+                return React.createElement(DrawerScreen, props);
+            })
+        },
+        DrawerOpen: {
+            screen: function screen() {
+                return null;
+            }
+        }
+    }, {
+        initialRouteName: 'DrawerClose'
+    });
 
-  var navigator = createNavigator(drawerRouter, routeConfigs, config)(function (props) {
-    return React.createElement(DrawerView, _extends({}, props, {
-      drawerWidth: drawerWidth,
-      contentComponent: contentComponent,
-      contentOptions: contentOptions,
-      drawerPosition: drawerPosition
-    }));
-  });
+    var navigator = createNavigator(drawerRouter, routeConfigs, config
+    /*NavigatorTypes.DRAWER,*/
+    )(function (props) {
+        return React.createElement(DrawerView, _extends({}, props, {
+            drawerWidth: drawerWidth,
+            contentComponent: contentComponent,
+            contentOptions: contentOptions,
+            drawerPosition: drawerPosition
+        }));
+    });
 
-  return createNavigationContainer(navigator, containerConfig);
+    return createNavigationContainer(navigator, containerConfig);
 };
 
 exports.DrawerNavigator = DrawerNavigator;
