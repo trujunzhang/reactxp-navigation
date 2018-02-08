@@ -6,6 +6,7 @@
 * Base export for the iOS implementation of the plugin.
 */
 import {
+    withNavigation,
     NavigationActions,
     StackNavigator,
     DrawerNavigator,
@@ -14,6 +15,7 @@ import {
 } from 'react-navigation'
 
 export {
+    withNavigation,
     NavigationActions,
     StackNavigator,
     TabNavigator,
