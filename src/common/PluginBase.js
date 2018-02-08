@@ -9,12 +9,14 @@ import {
     NavigationActions,
     StackNavigator,
     DrawerNavigator,
-    TabNavigator
+    TabNavigator,
+    addNavigationHelpers
 } from 'react-navigation'
 
 export {
     NavigationActions,
     StackNavigator,
     TabNavigator,
-    DrawerNavigator
+    DrawerNavigator,
+    addNavigationHelpers
 }
