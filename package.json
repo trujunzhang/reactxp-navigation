@@ -8,7 +8,7 @@
     "build": "babel --presets react,es2015 --plugins transform-object-rest-spread,transform-es2015-arrow-functions,transform-class-properties -d dist/ src/"
   },
   "dependencies": {
-    "react-navigation": "^1.0.0-beta.27",
+    "react-navigation": "^1.0.0",
     "reactxp-animation": "https://github.com/LeJPR/reactxp-animation.git"
   },
   "peerDependencies": {
