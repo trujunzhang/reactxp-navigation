@@ -1,6 +1,6 @@
 {
   "name": "reactxp-navigation",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Plugin for ReactXP that provides react-navigation for all platforms",
   "author": "lejpr",
   "license": "MIT",

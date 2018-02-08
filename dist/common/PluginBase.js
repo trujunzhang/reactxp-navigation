@@ -1,12 +1,13 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-     value: true
+    value: true
 });
-exports.DrawerNavigator = exports.TabNavigator = exports.StackNavigator = undefined;
+exports.DrawerNavigator = exports.TabNavigator = exports.StackNavigator = exports.NavigationActions = undefined;
 
 var _reactNavigation = require('react-navigation');
 
+exports.NavigationActions = _reactNavigation.NavigationActions;
 exports.StackNavigator = _reactNavigation.StackNavigator;
 exports.TabNavigator = _reactNavigation.TabNavigator;
 exports.DrawerNavigator = _reactNavigation.DrawerNavigator; /*
