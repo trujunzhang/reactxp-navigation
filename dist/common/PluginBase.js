@@ -3,10 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.addNavigationHelpers = exports.DrawerNavigator = exports.TabNavigator = exports.StackNavigator = exports.NavigationActions = undefined;
+exports.addNavigationHelpers = exports.DrawerNavigator = exports.TabNavigator = exports.StackNavigator = exports.NavigationActions = exports.withNavigation = undefined;
 
 var _reactNavigation = require('react-navigation');
 
+exports.withNavigation = _reactNavigation.withNavigation;
 exports.NavigationActions = _reactNavigation.NavigationActions;
 exports.StackNavigator = _reactNavigation.StackNavigator;
 exports.TabNavigator = _reactNavigation.TabNavigator;
